@@ -45,7 +45,7 @@ public class CoronaVirusDataService {
 		 * HttpResponse.BodyHandlers.ofString()); System.out.println(response.body());
 		 */
 		List<LocationStats> newStats= new ArrayList<>();
-		Reader in = new FileReader("/coronavirus-tracker/src/main/resources/corona.csv");
+		Reader in = new FileReader("/corona.csv");
 		Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(in);
 		for (CSVRecord record : records) {
 			
