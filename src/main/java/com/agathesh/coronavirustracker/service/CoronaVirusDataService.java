@@ -26,7 +26,7 @@ import com.agathesh.coronavirustracker.model.LocationStats;
 @Service 
 public class CoronaVirusDataService {
 
-	public String VIRUS_DATA_URL="https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"; 
+	//public String VIRUS_DATA_URL="https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"; 
 	
 	private List<LocationStats> allStats= new ArrayList<>();
 	public List<LocationStats> getAllStats() {
@@ -45,7 +45,7 @@ public class CoronaVirusDataService {
 		 * HttpResponse.BodyHandlers.ofString()); System.out.println(response.body());
 		 */
 		List<LocationStats> newStats= new ArrayList<>();
-		Reader in = new FileReader("/coronavirus-tracker/src/main/java/com/agathesh/coronavirustracker/service/corona.csv");
+		Reader in = new FileReader("/coronavirus-tracker/src/main/resources/corona.csv");
 		Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(in);
 		for (CSVRecord record : records) {
 			
